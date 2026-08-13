@@ -31,8 +31,8 @@ ADR-0001 change evidence:
 
 - Official-source comparison: `PASS` — Node/Next/PostgreSQL/Prisma/Django/.NET primary documentation reviewed.
 - Constitution and scope gates: `PASS` — decision-only change, không package/code/scaffold.
-- Relative links and state consistency: `PENDING`
-- GitHub commit/read-back: `PENDING`
+- Relative links and state consistency: `PASS` — 15/15 Markdown files, no broken relative links, một FND-001 `IN_REVIEW` và không có ticket `READY` trước owner decision.
+- GitHub commit/read-back: `PASS` — `main` chứa proposal commit `507b556bdcd9426899dd0399e633d73311239ddc`; ADR, NEXT_TASK và CURRENT_STATE đã được đọc lại qua GitHub.
 
 ## Continue from
 
