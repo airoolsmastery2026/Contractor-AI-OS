@@ -34,7 +34,6 @@ Lợi thế dài hạn nằm ở dữ liệu có cấu trúc, lịch sử giá, 
 
 Các quyết định sau chưa được khóa và không được suy đoán:
 
-- runtime, web framework, ORM/query layer và test runner;
 - authentication/identity provider;
 - deployment target, object storage, queue/job runner và observability stack;
 - currency/locale đầu tiên và chính sách thuế được pilot xác nhận;
@@ -45,3 +44,7 @@ Các quyết định sau chưa được khóa và không được suy đoán:
 - baseline và target định lượng cho tốc độ báo giá, độ chính xác, conversion và cost/run.
 
 Các mục này phải được quyết định bằng ticket/ADR hoặc bằng chứng pilot trước khi phụ thuộc được thêm.
+
+## Proposed decision pending approval
+
+`docs/adr/0001-implementation-stack.md` đề xuất Node.js 24 LTS, TypeScript 6, Next.js 16 App Router trên Node runtime, PostgreSQL 18, Prisma ORM/Migrate, domain Decimal và Node built-in test runner. Quyết định này chưa trở thành locked truth cho đến khi project owner ghi `APPROVE ADR-0001`.

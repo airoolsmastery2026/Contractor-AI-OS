@@ -8,11 +8,13 @@ Updated: `2026-08-13`
 - Constitution cùng product, architecture, security, pricing, AI và approval invariants.
 - START/CONTEXT/CURRENT_STATE/NEXT_TASK source-of-truth chain.
 - Product/MVP, architecture, conceptual data model, roadmap, backlog và verification plan.
+- `ADR-0001` ở trạng thái `PROPOSED`, so sánh ba stack và đề xuất full-stack TypeScript modular monolith.
 
 ## Deliberately not delivered
 
 - Không package, framework scaffold, application code, migration, CI workflow hoặc deployment config.
-- Không chọn runtime, auth, AI/OCR provider hoặc hosting.
+- Không cài runtime hoặc dependency; implementation stack chưa có hiệu lực cho đến khi owner approve.
+- Không chọn auth, AI/OCR provider, background queue, object storage hoặc hosting.
 - Không tạo feature ngoài MVP.
 
 ## Verification evidence
@@ -25,13 +27,20 @@ Chỉ cập nhật mục này bằng kết quả đã chạy trên chính commit
 - No code/dependency manifests: `PASS` — bootstrap tree chỉ chứa Markdown source-of-truth.
 - GitHub bootstrap commit/ref: `PASS` — `main` chứa commit `951f7e7bcb4f26cd0d75385af90a6fe51c868a25`; README, HANDOFF và Backlog đã được đọc lại qua GitHub.
 
+ADR-0001 change evidence:
+
+- Official-source comparison: `PASS` — Node/Next/PostgreSQL/Prisma/Django/.NET primary documentation reviewed.
+- Constitution and scope gates: `PASS` — decision-only change, không package/code/scaffold.
+- Relative links and state consistency: `PENDING`
+- GitHub commit/read-back: `PENDING`
+
 ## Continue from
 
-Đọc `START.md`, sau đó thực hiện duy nhất `FND-001` trong `NEXT_TASK.md`.
+Đọc `START.md`, review `ADR-0001`, sau đó approve hoặc reject theo cú pháp trong `NEXT_TASK.md`.
 
 ## Do not assume
 
-- Stack/provider chưa chọn.
+- Stack mới ở trạng thái `PROPOSED`, chưa được coi là approved truth.
 - Formula v0.1 là hợp đồng thiết kế cần pilot sample xác nhận trước implementation.
 - `FOUNDATION_V0_1_LOCKED` không có nghĩa security hoặc quote engine đã được code/test; nó chỉ khóa direction và gates.
 

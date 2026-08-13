@@ -4,7 +4,7 @@ As of: `2026-08-13`
 
 ## Status
 
-`FOUNDATION_V0_1_LOCKED`
+`FND_001_IN_REVIEW`
 
 Đã khóa:
 
@@ -22,11 +22,11 @@ As of: `2026-08-13`
 - Repository trước bootstrap là empty repository trên nhánh mặc định `main`.
 - Bootstrap chỉ chứa Markdown source-of-truth.
 - Không có application code, package manifest, dependency, migration, secret hoặc generated artifact.
-- Chưa chọn runtime/framework/provider.
+- `ADR-0001` đã được đề xuất; chưa có runtime/framework/provider nào được cài hoặc chấp thuận cuối cùng.
 
 ## Verification state
 
-Foundation verification được định nghĩa trong `docs/VERIFICATION.md`. Kết quả của commit bootstrap phải được ghi vào `HANDOFF.md` sau khi kiểm chứng.
+Foundation bootstrap đã pass. ADR-0001 phải pass link/scope/decision/dependency-budget review và GitHub read-back trước khi xin owner approval; kết quả nằm trong `HANDOFF.md`.
 
 ## Known risks
 
@@ -35,6 +35,6 @@ Foundation verification được định nghĩa trong `docs/VERIFICATION.md`. K�
 - AI accuracy, latency và cost chưa có baseline.
 - Data retention, backup, recovery và deployment chưa được quyết định.
 
-## Blockers
+## Decision required
 
-Không có blocker đối với next task. Mọi feature ticket khác bị chặn bởi các foundation/validation tickets được nêu trong backlog.
+Project owner cần approve hoặc reject `ADR-0001`. Đây là next task duy nhất; mọi implementation/package vẫn bị chặn.

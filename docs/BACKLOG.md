@@ -1,11 +1,11 @@
 # Backlog and Tickets
 
-Status values: `DONE`, `READY`, `BLOCKED`, `PENDING`. Chỉ ticket được chọn trong `NEXT_TASK.md` là công việc mặc định được phép bắt đầu.
+Status values: `DONE`, `READY`, `IN_REVIEW`, `BLOCKED`, `PENDING`. Chỉ ticket được chọn trong `NEXT_TASK.md` là công việc mặc định được phép bắt đầu.
 
 | ID | Priority | Status | Outcome | Depends on |
 |---|---:|---|---|---|
 | GOV-001 | P0 | DONE | Bootstrap source-of-truth và foundation v0.1 | — |
-| FND-001 | P0 | READY | Chọn implementation stack và ADR | GOV-001 |
+| FND-001 | P0 | IN_REVIEW | Review/approve ADR-0001 implementation stack | GOV-001 |
 | DISC-001 | P0 | PENDING | Xác nhận workflow bằng ≥3 sample quote được phép sử dụng | GOV-001 |
 | FND-002 | P0 | BLOCKED | Khóa units/currency/rounding/tax/markup policy v0.1 | DISC-001 |
 | SEC-001 | P0 | BLOCKED | Permission matrix, threat model, data classification | FND-001, DISC-001 |

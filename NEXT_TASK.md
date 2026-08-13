@@ -1,41 +1,49 @@
 # NEXT_TASK
 
-## FND-001 — Chọn implementation stack và ghi ADR đầu tiên
+## FND-001 — Review và quyết định ADR-0001
 
-Status: `READY`
-Owner: `UNASSIGNED`
+Status: `AWAITING_OWNER_APPROVAL`
+Owner: `PROJECT_OWNER`
 Priority: `P0`
 
 ## Outcome
 
-Một ADR được chủ dự án chấp thuận, lựa chọn bộ stack nhỏ nhất có thể hiện thực modular monolith, PostgreSQL multi-tenancy, decimal pricing, background work, provider abstraction và automated tests mà không khóa domain vào vendor.
+Một quyết định tường minh: chấp thuận hoặc từ chối implementation stack được đề xuất trong `docs/adr/0001-implementation-stack.md`.
 
-## In scope
+## Proposed stack
 
-- So sánh tối đa ba lựa chọn thực tế.
-- Quyết định runtime/language, web framework, persistence/migration layer và test runner.
-- Xác định cách triển khai transaction, decimal, tenant context và database RLS.
-- Nêu dependency tối thiểu dự kiến, security/licensing impact và phương án thay thế.
-- Tạo một ADR; cập nhật source-of-truth nếu quyết định làm thay đổi assumption.
+`Node.js 24 LTS + TypeScript 6 + Next.js 16 App Router (Node runtime) + PostgreSQL 18 + Prisma ORM/Migrate + decimal.js + Zod + node:test`
 
-## Out of scope
+## Review questions
+
+- Một ngôn ngữ TypeScript cho UI/server có phù hợp hướng vận hành dự án không?
+- Có chấp nhận Next.js chỉ là delivery layer và cấm direct Prisma access trong `src/app` không?
+- Có chấp nhận non-owner application DB role, forced RLS và tenant context transaction-local không?
+- Có chấp nhận domain Decimal + JSON decimal strings thay cho JavaScript number không?
+- Có chấp nhận defer auth, AI, storage, queue, hosting và E2E dependencies sang ticket có nhu cầu không?
+
+## Decision syntax
+
+- `APPROVE ADR-0001`
+- `REJECT ADR-0001: <lý do hoặc thay đổi mong muốn>`
+
+## Until decided
 
 - Không cài package.
-- Không scaffold app.
-- Không viết feature, migration hoặc integration.
-- Không chọn AI model chỉ vì quen thuộc; provider selection có ticket riêng.
+- Không scaffold application.
+- Không viết feature, migration hoặc provider integration.
+- Không chuyển `BOOT-001` hoặc ticket phụ thuộc sang `READY`.
 
 ## Acceptance criteria
 
-- ADR có context, options, decision, consequences, rejected alternatives và review trigger.
-- Quyết định thỏa tất cả điều khoản trong Constitution.
-- Có phương án test tenant isolation và deterministic quote engine.
-- Danh sách dependency ban đầu nhỏ, có lý do cho từng mục.
+- Owner decision được ghi tường minh.
+- Nếu approve: ADR đổi thành `ACCEPTED`, FND-001 thành `DONE` và đúng một next ticket được chọn.
+- Nếu reject: ADR/FND-001 giữ mở, feedback được ghi vào decision context.
 - `CURRENT_STATE.md`, `docs/BACKLOG.md` và `HANDOFF.md` được đồng bộ.
 
 ## Required reading
 
 - `CONSTITUTION.md`
+- `docs/adr/0001-implementation-stack.md`
 - `docs/ARCHITECTURE.md`
-- `docs/DATA_MODEL.md`
 - `docs/VERIFICATION.md`

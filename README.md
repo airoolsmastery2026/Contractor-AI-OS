@@ -27,6 +27,7 @@ Chi tiết nền tảng nằm trong:
 - [Product vision và MVP](docs/PRODUCT.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Data model](docs/DATA_MODEL.md)
+- [Proposed implementation stack ADR](docs/adr/0001-implementation-stack.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Backlog/tickets](docs/BACKLOG.md)
 - [Verification](docs/VERIFICATION.md)
