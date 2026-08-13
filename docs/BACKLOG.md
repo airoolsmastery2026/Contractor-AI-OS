@@ -1,12 +1,12 @@
 # Backlog and Tickets
 
-Status values: `DONE`, `READY`, `IN_REVIEW`, `BLOCKED`, `PENDING`. Chỉ ticket được chọn trong `NEXT_TASK.md` là công việc mặc định được phép bắt đầu.
+Status values: `DONE`, `READY`, `IN_REVIEW`, `BLOCKED`, `PENDING`. Chỉ ticket được chọn trong `NEXT_TASK.md` là công việc mặc định được phép tiếp tục.
 
 | ID | Priority | Status | Outcome | Depends on |
 |---|---:|---|---|---|
 | GOV-001 | P0 | DONE | Bootstrap source-of-truth và foundation v0.1 | — |
 | FND-001 | P0 | DONE | ADR-0001 implementation stack accepted | GOV-001 |
-| DISC-001 | P0 | READY | Xác nhận workflow bằng ≥3 sample quote được phép sử dụng | GOV-001 |
+| DISC-001 | P0 | IN_REVIEW | Owner review evidence pack của ≥3 sample quote | GOV-001 |
 | FND-002 | P0 | BLOCKED | Khóa units/currency/rounding/tax/markup policy v0.1 | DISC-001 |
 | SEC-001 | P0 | BLOCKED | Permission matrix, threat model, data classification | FND-001, DISC-001 |
 | BOOT-001 | P0 | PENDING | Minimal modular-monolith skeleton + test harness, không feature | FND-001 |
@@ -32,11 +32,13 @@ Acceptance: các source-of-truth file tồn tại, liên kết hợp lệ, decis
 
 ### FND-001 — Stack ADR
 
-Acceptance: theo `NEXT_TASK.md`; không cài dependency hoặc scaffold.
+Acceptance: theo accepted `ADR-0001`; exact package work chỉ trong `BOOT-001`.
 
 ### DISC-001 — Pilot workflow truth
 
 Acceptance: sample đã de-identify/được phép; input, missing-data questions, price sources, units, labor/accessory/waste/transport/overhead/markup/tax, approvals và final outcome được mô tả; khác biệt giữa samples được ghi thành rule candidate, không hard-code.
+
+Current evidence: `docs/discovery/quote-workflow-v0.1.md` là draft `PROVISIONAL`; owner confirmation vẫn `PENDING`, nên ticket chưa `DONE`.
 
 ### FND-002 — Calculation policy
 

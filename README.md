@@ -4,13 +4,13 @@ Contractor AI OS là vertical AI SaaS cho nhà thầu chuyên ngành, tập trun
 
 ## Trạng thái
 
-- Giai đoạn: `STACK_LOCKED_DISCOVERY_READY`
+- Giai đoạn: `DISCOVERY_EVIDENCE_IN_REVIEW`
 - Wedge: `AI Quote-to-Close OS`
 - Kiến trúc: modular monolith
 - Tính giá: deterministic; AI không quyết định giá cuối cùng
 - Bảo vệ dữ liệu: multi-tenant isolation từ ngày đầu
 - Code tính năng và dependency: chưa được thêm
-- Việc kế tiếp duy nhất: [NEXT_TASK.md](NEXT_TASK.md)
+- Việc kế tiếp duy nhất: owner review `DISC-001` trong [NEXT_TASK.md](NEXT_TASK.md)
 
 ## Bắt đầu ở đây
 
@@ -20,7 +20,7 @@ Contractor AI OS là vertical AI SaaS cho nhà thầu chuyên ngành, tập trun
 2. [CONSTITUTION.md](CONSTITUTION.md) — các bất biến và cổng bắt buộc.
 3. [CONTEXT.md](CONTEXT.md) — bối cảnh sản phẩm và các quyết định đã khóa.
 4. [CURRENT_STATE.md](CURRENT_STATE.md) — trạng thái có bằng chứng.
-5. [NEXT_TASK.md](NEXT_TASK.md) — đúng một việc được phép bắt đầu tiếp theo.
+5. [NEXT_TASK.md](NEXT_TASK.md) — đúng một việc được phép tiếp tục.
 
 Chi tiết nền tảng nằm trong:
 
@@ -28,6 +28,7 @@ Chi tiết nền tảng nằm trong:
 - [Architecture](docs/ARCHITECTURE.md)
 - [Data model](docs/DATA_MODEL.md)
 - [Accepted implementation stack ADR](docs/adr/0001-implementation-stack.md)
+- [Discovery evidence pack](docs/discovery/quote-workflow-v0.1.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Backlog/tickets](docs/BACKLOG.md)
 - [Verification](docs/VERIFICATION.md)

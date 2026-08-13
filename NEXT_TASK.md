@@ -1,8 +1,8 @@
 # NEXT_TASK
 
-## DISC-001 — Xác nhận workflow bằng tối thiểu ba sample quote
+## DISC-001 — Owner review evidence pack của ba sample quote
 
-Status: `READY`
+Status: `IN_REVIEW`
 Owner: `PROJECT_OWNER + PRODUCT`
 Priority: `P0`
 
@@ -10,32 +10,34 @@ Priority: `P0`
 
 Một evidence pack đã được chủ dự án xác nhận, mô tả cách yêu cầu khách hàng thực sự trở thành scope, calculation inputs, quote revisions, approval và kết quả thương mại. Đây là business truth cho `FND-002`; không phải dữ liệu demo tự bịa.
 
-## Required inputs
+## Evidence prepared
 
-Cung cấp tối thiểu ba báo giá đại diện đã được phép sử dụng và đã xóa/che dữ liệu nhạy cảm không cần thiết:
+Draft sanitized/provisional: [`docs/discovery/quote-workflow-v0.1.md`](docs/discovery/quote-workflow-v0.1.md).
 
-1. một case đơn giản, scope tương đối đầy đủ;
-2. một case có thông tin thiếu, lựa chọn vật liệu/phụ kiện, vận chuyển hoặc phát sinh;
-3. một case có revision, discount, VAT/thuế, approval hoặc thay đổi sau trao đổi.
+- Ba candidate case đã được phân loại.
+- Hai candidate có arithmetic reconciliation; một candidate thiếu dữ liệu để tính lại.
+- Unit labels, source patterns, revision candidates, unknowns và data-classification inputs đã được ghi.
+- Raw media, PII, filenames và detailed commercial values không được commit.
 
-Mỗi case nên có những gì thực sự tồn tại: yêu cầu gốc, ảnh/PDF tham chiếu, scope cuối, nguồn/đơn giá, đơn vị, số lượng, labor, accessory, waste, transport, overhead, markup, discount, tax, total, người duyệt và kết quả won/lost. Trường không biết phải ghi `UNKNOWN`; không suy đoán.
+## Required owner review
 
-## Execution
+Project owner xác nhận hoặc sửa:
 
-- De-identify customer, phone, address chi tiết, supplier secrets và commercial data không được phép lưu.
-- Lập provenance map từ input gốc đến từng scope/calculation field.
-- Ghi missing-data questions và ai là người trả lời.
-- Tái dựng calculation trace; đánh dấu chỗ formula hiện tại không giải thích được.
-- So sánh ba case để tạo rule candidates, unit taxonomy và exception list.
-- Ghi approval/revision/send/CRM stage transitions thực tế.
-- Trình project owner xác nhận evidence pack trước khi hoàn thành ticket.
+1. mỗi candidate có phải quote thật đã gửi khách hay chỉ là mẫu/tham khảo;
+2. project alias, date, category và original request;
+3. source/effective date, unit, rounding, tax, transport/install, discount và markup behavior;
+4. revision, approval, send và won/lost outcome;
+5. quan hệ của bảng phát sinh và mapping ảnh/video;
+6. permission cho sanitized numeric test vectors trong public repo.
 
-## Deliverables
+Trường không biết giữ `UNKNOWN`; không suy đoán để đóng ticket.
 
-- `docs/discovery/quote-workflow-v0.1.md`
-- các sample đã sanitize dưới dạng Markdown/JSON tối giản nếu được phép commit;
-- decision log về unknowns/conflicts;
-- input cho `FND-002` calculation policy và `SEC-001` data classification.
+## After owner review
+
+- Áp dụng corrections vào evidence pack.
+- Nếu được phép, thêm test vectors tối giản; không commit raw documents.
+- Trình owner xác nhận bản cuối.
+- Chỉ khi toàn bộ acceptance criteria pass mới chuyển `DISC-001` thành `DONE` và chọn next task theo dependency graph.
 
 ## Non-goals
 
@@ -52,6 +54,6 @@ Mỗi case nên có những gì thực sự tồn tại: yêu cầu gốc, ảnh
 - Project owner xác nhận evidence pack phản ánh workflow thực tế.
 - `CURRENT_STATE.md`, `docs/BACKLOG.md`, `NEXT_TASK.md` và `HANDOFF.md` được đồng bộ.
 
-## First action required
+## Stop condition
 
-Project owner cung cấp ba sample quote đã sanitize hoặc chỉ rõ vị trí file được phép đọc. Không gửi dữ liệu cá nhân/bí mật không cần thiết.
+Owner confirmation là gate bắt buộc. Trong lúc chờ, không bắt đầu `FND-002`, `SEC-001`, `BOOT-001` hoặc code/package work.
