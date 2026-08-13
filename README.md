@@ -4,7 +4,7 @@ Contractor AI OS là vertical AI SaaS cho nhà thầu chuyên ngành, tập trun
 
 ## Trạng thái
 
-- Giai đoạn: `FOUNDATION_V0_1_LOCKED`
+- Giai đoạn: `STACK_LOCKED_DISCOVERY_READY`
 - Wedge: `AI Quote-to-Close OS`
 - Kiến trúc: modular monolith
 - Tính giá: deterministic; AI không quyết định giá cuối cùng
@@ -27,7 +27,7 @@ Chi tiết nền tảng nằm trong:
 - [Product vision và MVP](docs/PRODUCT.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Data model](docs/DATA_MODEL.md)
-- [Proposed implementation stack ADR](docs/adr/0001-implementation-stack.md)
+- [Accepted implementation stack ADR](docs/adr/0001-implementation-stack.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Backlog/tickets](docs/BACKLOG.md)
 - [Verification](docs/VERIFICATION.md)

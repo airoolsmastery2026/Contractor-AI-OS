@@ -5,11 +5,11 @@ Status values: `DONE`, `READY`, `IN_REVIEW`, `BLOCKED`, `PENDING`. Chỉ ticket 
 | ID | Priority | Status | Outcome | Depends on |
 |---|---:|---|---|---|
 | GOV-001 | P0 | DONE | Bootstrap source-of-truth và foundation v0.1 | — |
-| FND-001 | P0 | IN_REVIEW | Review/approve ADR-0001 implementation stack | GOV-001 |
-| DISC-001 | P0 | PENDING | Xác nhận workflow bằng ≥3 sample quote được phép sử dụng | GOV-001 |
+| FND-001 | P0 | DONE | ADR-0001 implementation stack accepted | GOV-001 |
+| DISC-001 | P0 | READY | Xác nhận workflow bằng ≥3 sample quote được phép sử dụng | GOV-001 |
 | FND-002 | P0 | BLOCKED | Khóa units/currency/rounding/tax/markup policy v0.1 | DISC-001 |
 | SEC-001 | P0 | BLOCKED | Permission matrix, threat model, data classification | FND-001, DISC-001 |
-| BOOT-001 | P0 | BLOCKED | Minimal modular-monolith skeleton + test harness, không feature | FND-001 |
+| BOOT-001 | P0 | PENDING | Minimal modular-monolith skeleton + test harness, không feature | FND-001 |
 | DATA-001 | P0 | BLOCKED | Tenant/data/audit schema + repeatable migrations | SEC-001, BOOT-001 |
 | SEC-002 | P0 | BLOCKED | Tenant context, RBAC, DB isolation và negative-test harness | DATA-001 |
 | PRICE-001 | P0 | BLOCKED | Versioned PriceBook và pricing rules | FND-002, SEC-002 |

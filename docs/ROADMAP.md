@@ -10,7 +10,7 @@ Exit: tài liệu nhất quán, không code/dependency, một next task duy nh�
 
 ## Phase 1 — Pilot truth and technical decisions
 
-- FND-001 chọn stack/ADR.
+- FND-001 chọn stack/ADR (`COMPLETE`).
 - DISC-001 thu thập và chuẩn hóa quote workflow thực tế cùng tối thiểu ba sample đại diện.
 - FND-002 khóa units/currency/rounding/tax/markup policy v0.1.
 - SEC-001 khóa permission matrix, threat model và data classification.

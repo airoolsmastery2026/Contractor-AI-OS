@@ -28,8 +28,8 @@ Trước khi thay đổi:
 ## Current operating mode
 
 - Foundation v0.1 đã được khóa ở mức product invariant, architecture direction, security/AI/pricing boundaries và delivery plan.
-- `ADR-0001` đã đề xuất implementation stack nhưng đang chờ project owner chấp thuận.
-- Chưa có application code, package hoặc runtime stack đã được chấp thuận/cài đặt.
+- `ADR-0001` đã được project owner chấp thuận; implementation stack đã khóa.
+- Chưa có application code, package hoặc dependency được cài đặt.
 - Không bắt đầu ticket khác ngoài `NEXT_TASK.md` nếu chưa cập nhật source-of-truth.
 
 ## Finish protocol

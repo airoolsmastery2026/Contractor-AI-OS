@@ -29,6 +29,7 @@ Lợi thế dài hạn nằm ở dữ liệu có cấu trúc, lịch sử giá, 
 - Quote engine deterministic; AI không tính giá cuối cùng.
 - AI/provider abstraction; structured output + validation + human approval.
 - Repo là source of truth; state/handoff phải được cập nhật cùng thay đổi.
+- Implementation stack theo `ADR-0001`: Node.js 24 LTS, TypeScript 6, Next.js 16 App Router trên Node runtime, PostgreSQL 18, Prisma ORM/Migrate, domain Decimal và Node built-in test runner.
 
 ## Open decisions
 
@@ -45,6 +46,6 @@ Các quyết định sau chưa được khóa và không được suy đoán:
 
 Các mục này phải được quyết định bằng ticket/ADR hoặc bằng chứng pilot trước khi phụ thuộc được thêm.
 
-## Proposed decision pending approval
+## Stack decision
 
-`docs/adr/0001-implementation-stack.md` đề xuất Node.js 24 LTS, TypeScript 6, Next.js 16 App Router trên Node runtime, PostgreSQL 18, Prisma ORM/Migrate, domain Decimal và Node built-in test runner. Quyết định này chưa trở thành locked truth cho đến khi project owner ghi `APPROVE ADR-0001`.
+Project owner đã chấp thuận `ADR-0001` ngày `2026-08-13`. Exact package versions và compatibility smoke test chỉ được thực hiện trong `BOOT-001`; việc chấp thuận ADR không tự cho phép cài dependency ngoài ticket.

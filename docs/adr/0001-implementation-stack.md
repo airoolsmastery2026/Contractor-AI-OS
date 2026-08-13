@@ -1,7 +1,8 @@
 # ADR-0001 — Implementation Stack
 
-Status: `PROPOSED`
+Status: `ACCEPTED`
 Date: `2026-08-13`
+Accepted: `2026-08-13`
 Decision owner: Project owner
 Ticket: `FND-001`
 
@@ -26,7 +27,7 @@ Stack chưa được phép kéo business logic vào framework/ORM hoặc tạo d
 | Python + Django LTS + PostgreSQL | Decimal native; auth/admin/ORM/migrations tích hợp; Python AI ecosystem mạnh; LTS dài | UI tương tác cần thêm frontend conventions/dependencies; chia sẻ types UI/server yếu hơn; RLS vẫn cần custom migration/context wrapper |
 | .NET LTS + ASP.NET Core + EF Core + PostgreSQL | Decimal/type system mạnh; background services và enterprise tooling tốt; LTS rõ | Chi phí phát triển/UI và độ chuyên môn vận hành cao hơn cho giai đoạn solo/small-team; AI/web product iteration kém trực tiếp hơn phương án TypeScript |
 
-## Decision proposed
+## Decision
 
 Chọn một single-package full-stack TypeScript modular monolith:
 
@@ -48,7 +49,7 @@ Exact package versions chỉ được pin trong `BOOT-001` sau compatibility smo
 
 ## Application boundaries
 
-Proposed topology:
+Accepted topology:
 
 ```text
 src/
@@ -157,15 +158,14 @@ Không bị loại vì technical quality. Revisit nếu team trở thành .NET-f
 
 Drizzle cho phép kiểm soát SQL/RLS trực tiếp hơn, nhưng API/migration generation đang có thay đổi lớn quanh major tiếp theo. Prisma được ưu tiên cho productivity và migration history ổn định hơn; custom SQL vẫn giữ RLS/constraints. Revisit nếu Prisma transaction/RLS integration không pass gate hoặc query control trở thành bottleneck.
 
-## Verification required before acceptance
+## Acceptance evidence and conditions
 
-- Owner xác nhận trade-off và trạng thái `ACCEPTED`.
-- Compatibility matrix xác nhận Node 24, TypeScript 6, Next 16 và stable Prisma line không xung đột.
-- Thiết kế test chứng minh RLS bằng non-owner application role và transaction-local tenant context.
-- Thiết kế test chứng minh Decimal/string/PostgreSQL numeric round-trip.
-- Dependency list không chứa package/provider ngoài budget.
-
-Không cài package để “thử” trong FND-001; smoke check thuộc `BOOT-001` sau khi ADR được chấp thuận.
+- Project owner explicitly approved with `APPROVE ADR-0001` on `2026-08-13`.
+- Document-level compatibility: `PASS` — supported Node/Next/PostgreSQL/Prisma lines and minimum requirements were checked against primary documentation.
+- RLS test design: `PASS` — non-owner application role, forced RLS and transaction-local tenant context are mandatory.
+- Decimal test design: `PASS` — canonical strings, domain Decimal and PostgreSQL numeric round-trip are mandatory.
+- Dependency budget: `PASS` — no package/provider outside the stated budget has been authorized.
+- Exact-version installation and compatibility smoke test: `DEFERRED_TO_BOOT-001` by design; no package was installed during FND-001.
 
 ## Review triggers
 
@@ -177,10 +177,9 @@ Review lại ADR nếu:
 - team ownership thay đổi mạnh sang Python hoặc .NET;
 - supported/LTS status của một thành phần kết thúc trước production launch.
 
-## Owner decision
+## Decision record
 
-- `APPROVE ADR-0001` → đổi status thành `ACCEPTED`, hoàn thành FND-001 và chọn ticket kế tiếp.
-- `REJECT ADR-0001: <reason>` → giữ FND-001 mở và sửa decision theo feedback.
+`APPROVE ADR-0001` received from the project owner on `2026-08-13`. This completes `FND-001`. Future changes follow the Constitution amendment/ADR process and the review triggers above.
 
 ## Evidence consulted
 
