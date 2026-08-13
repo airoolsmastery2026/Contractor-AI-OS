@@ -39,7 +39,7 @@ ADR-0001 acceptance evidence:
 - Owner decision: `PASS` — exact command `APPROVE ADR-0001` received on `2026-08-13`.
 - ADR/state/backlog transition: `PASS` — ADR `ACCEPTED`, FND-001 `DONE`, DISC-001 `READY`, BOOT-001 `PENDING`.
 - Single-next-task/no-code gate: `PASS` — đúng một ticket `READY`; 15/15 repository files là Markdown, không code/manifest/dependency.
-- GitHub acceptance commit/read-back: `PENDING`
+- GitHub acceptance commit/read-back: `PASS` — `main` contains `997f4ab1451114fb723fcc6c5d1ec17829476602`; accepted ADR, DISC-001 next task and backlog transitions were read back through GitHub.
 
 ## Continue from
 
