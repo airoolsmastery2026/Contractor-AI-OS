@@ -37,6 +37,7 @@ DISC-001 draft evidence:
 - Arithmetic observation: `PASS — LIMITED` — two visible candidate totals reconcile; third is incomplete.
 - Provenance/workflow coverage: `PARTIAL` — missing request, price authority/effective dates, revision/approval/send/outcome and media mapping remain `UNKNOWN`.
 - Owner business-truth confirmation: `PENDING`.
+- GitHub publish/read-back: `PASS` — `main` contains commit `9dbc193ec75d9f669b71975665005a474ba9a3f1`; six changed Markdown files were read back, sensitive-value scan was clear, 16/16 repository files are Markdown, changed-file links have no missing targets, and state has one `IN_REVIEW` ticket with no `READY` ticket.
 
 ## Continue from
 
